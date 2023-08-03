@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <title>Custom Navbar with Menu Icons</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"> 
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Varela Round', sans-serif;
+    }
+    
+    /* Navigation bar styles */
+    .navbar {
+        background-color: #01070d;
+      /* padding: 10px; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .navbar-brand {
+      color: #efe5ff;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    
+    .navbar-toggler {
+      display: none;
+    }
+    
+     .navbar-nav {
+      display: flex;
+    }
+    
+    .nav-item {
+      list-style: none;
+      margin-left: 20px;
+    }
+    
+    .nav-item a {
+      color: #efe5ff;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px;
+    }
+    
+    .nav-item a i {
+      margin-right: 5px;
+    } 
+ 
+     
+ 
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: #efe5ff;
+      padding: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      .navbar-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 10px;
+        background-color: #343a40;
+        width: 150px;
+      }
+      
+      .navbar-nav.show {
+        display: flex;
+      }
+      
+      .menu-icon {
+        display: block;
+      }
+    }
+  </style>
+</head> 
+<body>
+  
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand"><i class="fa fa-cube"></i>Algorithm<b>Visualizer</b></a>
+    <div class="menu-icon" onclick="toggleNavbar()">
+      &#9776;
+    </div>
+    <a href="../home.html" class="navbar-brand">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <i class="fa fa-home" style="font-size: 24px;"></i>
+        <span style="font-size: 19px;">Home</span>
+      </div>
+    </a>
+    <div class="menu-icon" onclick="toggleNavbar()">
+      &#9776;
+    </div>
+    
+  </nav>
+  <script>
+    function toggleNavbar() {
+      const navbar = document.getElementById("navbar-nav");
+      navbar.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

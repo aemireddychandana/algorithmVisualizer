@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    fetch('navbar.html')
+    .then(response => response.text())
+    .then(content => {
+        // Dynamically insert the content of nav.html into the navigation bar section
+        const navbarPlaceholder = document.createElement('div');
+        navbarPlaceholder.innerHTML = content;
+        document.body.insertBefore(navbarPlaceholder, document.getElementById('root'));
+    })
+    .catch(error => console.error(error));
+</script> 
+  
+  <style>
+* {
+  box-sizing: border-box;
+  /* color:rgb(67, 10, 88) ; */
+}
+ body {
+  background-image: linear-gradient(rgb(226, 155, 155), rgb(228, 228, 155), rgb(185, 185, 236));
+  /* background-image: linear-gradient(rgb(155, 226, 219), rgb(9, 154, 154)); */
+    
+} 
+
+.column {
+  float: left;
+  
+  width: 25%;
+  padding: 15px;
+  padding-bottom: 20px;
+  padding-left: 80px;
+  /* backface-visibility: hidden; */
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  /* width: 28%; */
+  float: center;
+  padding-left: 50px;
+  padding-bottom: 35px;
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+} */
+h1{
+  font-size: 35px;
+  padding-left: 45px;
+}
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  
+
+<div class="row">
+  <div class="column">
+    <h1> Tree Traversals</h1>
+      <a href="tree/BST.html">
+      <img src="images/tree.png" alt="Search" style="width:70%"></a>
+  </div>
+  
+  <div class="column">
+  <h1 > Sorting</h1>
+    <a href="sort/sortButton.html">
+    <img src="images/sort.png" alt="Forest" style="width:80%"></a>
+  </div>
+  <div class="column">
+  <h1> Searching</h1>
+    <a href="search/search.html">
+    <img src="images/search.png" alt="Search" style="width:80%"></a>
+  </div>
+  <div class="column">
+    <h1> MaxHeap</h1>
+      <a href="maxheap/maxheap.html">
+      <img src="images/maxheap.png" alt="Search" style="width:90%"></a>
+  </div>
+  
+ 
+  
+</div>
+<div class="row" >
+  <div class="column" >
+    <h1> Sudoko</h1>
+      <a href="sudoko/Sudoku-Solver-main/sudoko.html">
+      <img src="images/sudoko.png" alt="Search" style="width:70%"></a>
+</div>
+<div class="column">
+  <h1> Path Finding</h1>
+  <a href="path_find/graph.html">
+    <img src="images/pathfind.png" alt="Graph" style="width:70%"></a>
+</div>
+
+<div class="column">
+  <h1> Towers Of Hanoi</h1>
+    <a href="towersOfHanoi/TOH.html">
+    <img src="images/toh.png" alt="Search" style="width:70%"></a>
+</div>
+<div class="column">
+  <h1> NQueens</h1>
+    <a href="nQueens/nQueens.html">
+    <img src="images/nqueens.png" alt="Search" style="width:70%"></a>
+  </div>
+
+
+</div>
+<div class="row">
+  <div class="column">
+    <h1> MinHeap</h1>
+      <a href="minheap/minheap.html">
+      <img src="images/minheap.png" alt="Search" style="width:95%"></a>
+
+  </div>
+</div>
+
+</body>
+</html>

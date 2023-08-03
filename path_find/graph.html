@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Graph Traversal Algorithms</title>
+    <meta charset="UTF-8" />
+    
+    
+    <script defer src="travers.js"></script>
+    <script defer src="data.js"></script>
+    <script defer src="utils.js"></script>
+    <script defer src="map.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="graph.css" />
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+      <a href="../index.html" class="navbar-brand"><i class="fa fa-cube"></i>Algorithm<b>Visualizer</b></a>  		
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
+        <div class="navbar-nav ml-auto">
+          <a href="../home.html" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
+        </div>
+      </div>
+    </nav>
+    
+    <h1>Graph Traversal Visualizer</h1> 
+    <div>
+      <div>
+        <div style="display: flex;">
+          <section id="algorithmBtn">
+            <button id="dfsButton" data-algo="dfs">DFS</button>
+            <button id="bfsButton" data-algo="bfs">BFS</button>
+            <button id="astarButton" data-algo="astar">A*</button>
+          </section>
+          <section>
+            <button id="resetButton">Reset</button>
+            <button id="saveNodes">Save</button>
+            <button id="generateGraph">Draw </button>
+          </section>
+        </div>
+        <p id="message"></p>
+    <svg id="svg"></svg>
+    <div id="userInputNodeDiv" style="display: none">
+      <p id="edgeMessage"></p>
+      <svg id="svg2"></svg>
+    </div>
+  </body>
+</html>

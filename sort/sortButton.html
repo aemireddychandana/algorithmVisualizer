@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"> 
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    
+    <style>
+      body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Varela Round', sans-serif;
+      background-image: linear-gradient(#ddd6f3,#faaca8);
+    }
+    
+    /* Navigation bar styles */
+    .navbar {
+      height:65px;
+        background-color: #01070d;
+      /* padding: 10px; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .navbar-brand {
+      color: #efe5ff;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    
+    .navbar-toggler {
+      display: none;
+    }
+    
+     .navbar-nav {
+      display: flex;
+    }
+    
+    .nav-item {
+      list-style: none;
+      margin-left: 20px;
+    }
+    
+    .nav-item a {
+      color: #efe5ff;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px;
+    }
+    
+    .nav-item a i {
+      margin-right: 5px;
+    } 
+ 
+     
+ 
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: #efe5ff;
+      padding: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      .navbar-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 10px;
+        background-color: #343a40;
+        width: 150px;
+      }
+      
+      .navbar-nav.show {
+        display: flex;
+      }
+      
+      .menu-icon {
+        display: block;
+      }
+    }
+button {
+  --c:  #229091; /* the color*/
+  
+  box-shadow: 0 0 0 .1em inset var(--c); 
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: 
+    var(--_g) calc(var(--_p,0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p,0%)) 0%,
+    var(--_g) calc(var(--_p,0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+}
+button:hover {
+  --_p: 100%;
+  transition: background-position .4s, background-size 0s;
+}
+button:active {
+  box-shadow: 0 0 9e9q inset #0009; 
+  background-color: var(--c);
+  color: #fff;
+}
+
+
+
+
+button {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  height: 100px;
+  margin: 0;
+  /* display: grid; */
+  place-content: center;
+  grid-auto-flow: row;
+  gap: 40px;
+
+  font-family: system-ui, sans-serif;
+  font-size: 3.5rem;
+  cursor: pointer;
+  padding: .1em .6em;  
+  border: none;
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="../index.html" class="navbar-brand"><i class="fa fa-cube"></i>Algorithm<b>Visualizer</b></a>
+      <div class="menu-icon" onclick="toggleNavbar()">
+        &#9776;
+      </div>
+      <a href="../home.html" class="navbar-brand">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <i class="fa fa-home" style="font-size: 24px;"></i>
+          <span style="font-size: 19px;">Home</span>
+        </div>
+      </a>
+      <div class="menu-icon" onclick="toggleNavbar()">
+        &#9776;
+      </div>
+      
+    </nav>
+    <script>
+      function toggleNavbar() {
+        const navbar = document.getElementById("navbar-nav");
+        navbar.classList.toggle("show");
+      }
+    </script>
+    
+    <div id="row" style="padding-left: 400px;padding-top: 200px;padding-bottom: 20px;">
+      <div id="column" >
+        <a href="../sort/selectionSort/selection.html"><button>Selection Sort</button></a> 
+    <a href="../sort/bubbleSort/bubble.html"><button style="--c:#E95A49">Bubble Sort</button></a>
+    
+        
+      </div>
+    </div>
+    <div id="row"style="padding-left: 400px;padding-top: 20px;padding-bottom: 20px;">
+      <div id="column">
+        <a href="../sort/insertionSort/insertion.html"><button style="--c:#E95A49">Insertion Sort</button></a>
+        <a href="../sort/radixSort/radix.html" style="padding-left: 10px;"><button>Radix Sort</button></a> 
+    
+
+        
+      </div>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: Garamond, serif;
+    font-size: 17px;
+  }
+  
+  #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+  }
+  
+  .content { 
+    text-align: center;
+    font-size: 74px;
+    position: fixed;
+    word-spacing: 30px;
+    /* bottom: 0; */
+    /* background: rgba(203, 211, 212, 0.5); */
+    color: #f6f3f3;
+    width: 100%;
+    
+  } 
+  .fade-in-text {
+    font-family: Garamond, serif;
+    font-size: 60px;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  .semi-transparent-button { 
+    display: block; 
+    box-sizing: border-box; 
+    margin: 0 auto; 
+    padding: 8px; 
+    width: 25%; 
+    max-width:25 px; 
+    background: rgb(239, 239, 238); 
+    border-radius: 8px; 
+    color: #04021e; 
+    text-align: center; 
+    text-decoration: none;
+    font-size: 50px; 
+    transition: all 0.3s ease-out; 
+}
+ 

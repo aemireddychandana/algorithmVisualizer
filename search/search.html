@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Searching Visualizer</title>
+   
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+    -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <link rel="stylesheet" href="search.css"/>
+     
+    
+    
+  </head>
+  <body>
+    
+   
+    <div id="root">
+      <div class="outer-wrapper">
+        <!-- nav bar section -->
+        <nav class="navbar container shadow">
+          <!-- navbar left section -->
+          <!-- <div class="nav-left-section">
+            <h2><a href="../public/main.html">MAIN </a></h2>
+          </div> -->
+          <!-- navbar middle section -->
+          <div class="nav-middle-section">
+            <div class="linear-wrapper search-btn">
+              <button class="linear-btn btn" id="linear-search">
+                LINEAR SEARCH
+              </button>
+            </div>
+            <div class="binary-wrapper search-btn">
+              <button class="binary-btn btn" id="binary-search">
+                BINARY SEARCH
+              </button>
+            </div>
+          </div>
+          <!-- navbar right section -->
+          <!-- <div class="nav-right-section">
+            <h2><a href="">VISUALISER</a></h2>
+          </div> -->
+        </nav>
+
+        <!-- main body section  -->
+        <div class="main">
+          <div class="main-wrapper shadow">
+            <!-- searching visual section -->
+            <div class="search-window">
+              <div class="box-container">
+                <div class="box" id="box-wrapper-0">
+                  <!-- item text -->
+                  <div class="box-item-text" id="box0"></div>
+                  <!-- arrow icon -->
+                  <div class="box-item-icon">
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                  </div>
+                </div>
+                <div class="box" id="box-wrapper-1">
+                  <!-- item text -->
+                  <div class="box-item-text" id="box1"></div>
+                  <!-- arrow icon -->
+                  <div class="box-item-icon">
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                  </div>
+                </div>
+                <div class="box" id="box-wrapper-2">
+                  <!-- item text -->
+                  <div class="box-item-text" id="box2"></div>
+                  <!-- arrow icon -->
+                  <div class="box-item-icon">
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                  </div>
+                </div>
+                <div class="box" id="box-wrapper-3">
+                  <!-- item text -->
+                  <div class="box-item-text" id="box3"></div>
+                  <!-- arrow icon -->
+                  <div class="box-item-icon">
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                  </div>
+                </div>
+                <div class="box" id="box-wrapper-4">
+                  <!-- item text -->
+                  <div class="box-item-text" id="box4"></div>
+                  <!-- arrow icon -->
+                  <div class="box-item-icon">
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                  </div>
+                </div>
+                <div class="box" id="box-wrapper-5">
+                  <!-- item text -->
+                  <div class="box-item-text" id="box5"></div>
+                  <!-- arrow icon -->
+                  <div class="box-item-icon">
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                  </div>
+                </div>
+                <div class="box" id="box-wrapper-6">
+                  <!-- item text -->
+                  <div class="box-item-text" id="box6"></div>
+                  <!-- arrow icon -->
+                  <div class="box-item-icon">
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                  </div>
+                </div>
+                <div class="box" id="box-wrapper-7">
+                  <!-- item text -->
+                  <div class="box-item-text" id="box7"></div>
+                  <!-- arrow icon -->
+                  <div class="box-item-icon">
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                  </div>
+                </div>
+                <div class="box" id="box-wrapper-8">
+                  <!-- item text -->
+                  <div class="box-item-text" id="box8"></div>
+                  <!-- arrow icon -->
+                  <div class="box-item-icon">
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                  </div>
+                </div>
+                <div class="box" id="box-wrapper-9">
+                  <!-- item text -->
+                  <div class="box-item-text" id="box9"></div>
+                  <!-- arrow icon -->
+                  <div class="box-item-icon">
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                  </div>
+                </div>
+            </div>
+            <!-- search option section -->
+            <div class="search-options">
+              <div class="search-options-wrapper">
+                <!-- for generating new array -->
+                <div class="generate-array">
+                  <button class="new-array btn shadow" id="generate-array">
+                    NEW ARRAY
+                  </button>
+                </div>
+                <!-- for element to be search -->
+                <div class="search-element">
+                  <input
+                    type="text"
+                    placeholder="ENTER THE SEARCH ELEMENT"
+                    id="valueForSearch"
+                    required="required"
+                    autocomplete="off"
+                  />
+                </div>
+                <!-- for search to start -->
+                <div class="search-wrapper">
+                  <button class="search btn shadow" id="search">SEARCH</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        fetch('searchnav.html')
+        .then(response => response.text())
+        .then(content => {
+            // Dynamically insert the content of nav.html into the navigation bar section
+            const navbarPlaceholder = document.createElement('div');
+            navbarPlaceholder.innerHTML = content;
+            document.body.insertBefore(navbarPlaceholder, document.getElementById('root'));
+        })
+        .catch(error => console.error(error));
+    </script>
+   
+   
+   
+  </body>
+  <script>
+  const generateArrayBtn = document.getElementById("generate-array");
+const elementToSearch = document.getElementById("valueForSearch");
+const searchBtn = document.getElementById("search");
+const linearSearchBtn = document.getElementById("linear-search");
+const binarySearchBtn = document.getElementById("binary-search");
+const arrowIcons = document.getElementsByClassName("box-item-icon");
+
+// colors
+const successColor = "#32E0C4";
+const failureColor = "#FB3640";
+
+let randomArray = [];
+let randomSortedArray = [];
+let searchType = "linear";
+
+// generate random numbers first time
+insertRandomArray();
+
+// event listner for generating new array
+generateArrayBtn.addEventListener("click", () => {
+  insertRandomArray();
+});
+
+// event listner for searching an element in an array
+searchBtn.addEventListener("click", () => {
+  let element = elementToSearch.value;
+  if (element != "") {
+    const searchValue = parseInt(element);
+    if (searchType === "linear") {
+      disable();
+      linearSearch(randomArray, searchValue);
+    }
+
+    if (searchType === "binary") {
+      disable();
+      binarySearch(
+        randomSortedArray,
+        searchValue,
+        0,
+        randomSortedArray.length - 1
+      );
+    }
+  }
+});
+
+// event listner for selecting type of search method(linear or binary)
+// for linear search
+linearSearchBtn.addEventListener("click", () => {
+  binarySearchBtn.style.borderBottomColor = "#243441";
+  linearSearchBtn.style.borderBottom = "1px solid white";
+  searchType = "linear";
+});
+
+// for binary search
+binarySearchBtn.addEventListener("click", () => {
+  linearSearchBtn.style.borderBottomColor = "#243441";
+  binarySearchBtn.style.borderBottom = "1px solid white";
+  if (searchType != "binary") {
+    searchType = "binary";
+    insertRandomArray();
+  }
+});
+
+// linear search function
+function linearSearch(arr, value) {
+  let counter = 0;
+  const timer = setInterval(() => {
+    let box = `box-wrapper-${counter}`;
+
+
+    if (counter != 0) {
+      // hiding arrow
+      arrowIcons[counter - 1].style.display = "none";
+    }
+
+    if (counter == 10) {
+      alert("Element Not Found");
+      location.reload();
+      clearInterval(timer);
+    } else {
+      // displaying arrow
+      arrowIcons[counter].style.display = "block";
+      var innerTimer = setTimeout(() => {
+        document.getElementById(box).style.backgroundColor = failureColor;
+      }, 500);
+    }
+    if (arr[counter] === value) {
+      clearInterval(innerTimer);
+      // displaying arrow
+      arrowIcons[counter].style.display = "block";
+      document.getElementById(box).style.backgroundColor = successColor;
+      alert("Element Found At Index " + counter);
+      location.reload();
+      clearInterval(timer);
+    }
+    counter++;
+  }, 1000);
+}
+
+// binary search function
+function binarySearch(arr, x, start, end) {
+  if (start > end) {
+    alert("Element not Found");
+    return false;
+  }
+
+  // Find the middle index
+  let mid = Math.floor((start + end) / 2);
+  let previousMid = mid;
+  let box = `box-wrapper-${mid}`;
+
+  // Displaying arrow and color
+  arrowIcons[mid].style.display = "block";
+  document.getElementById(box).style.backgroundColor = "#32E0C4";
+
+  // Compare mid with given key x
+  if (arr[mid] === x) {
+    document.getElementById(box).style.backgroundColor = "#32E0C4";
+    alert("Element Found At Index " + mid);
+    return true;
+  }
+
+  // If element at mid is greater than x,
+  if (arr[mid] > x) {
+    // Search in the left half of mid
+    setTimeout(() => {
+      // Hiding arrow
+      arrowIcons[previousMid].style.display = "none";
+      binarySearch(arr, x, start, mid - 1);
+    }, 1000);
+  } else {
+    // If element at mid is smaller than x,
+    // Search in the right half of mid
+    setTimeout(() => {
+      // Hiding arrow
+      arrowIcons[previousMid].style.display = "none";
+      binarySearch(arr, x, mid + 1, end);
+    }, 1000);
+  }
+}
+
+
+// generate random array
+function generateArray() {
+  let value;
+  const resultArray = [];
+  for (let i = 0; i < 10; i++) {
+    value = Math.floor(Math.random() * 99);
+    resultArray.push(value);
+  }
+  return resultArray;
+}
+
+// insert random generated value
+// Rest of the code...
+
+// insert random generated value
+function insertRandomArray() {
+  // making global variable
+  randomArray = generateArray();
+  randomSortedArray = [...randomArray];
+
+  // sort random array for binary search
+  randomSortedArray.sort((a, b) => a - b);
+
+  if (searchType === "linear") {
+    for (let i = 0; i < 10; i++) {
+      let box = "box" + i;
+      document.getElementById("box-wrapper-" + i).innerHTML = `
+        <div class="box-item-text" id="${box}">${randomArray[i]}</div>
+        <div class="box-item-icon">
+          <i class="fas fa-long-arrow-alt-up"></i>
+        </div>`;
+    }
+  } else {
+    for (let i = 0; i < 10; i++) {
+      let box = "box" + i;
+      document.getElementById("box-wrapper-" + i).innerHTML = `
+        <div class="box-item-text" id="${box}">${randomSortedArray[i]}</div>
+        <div class="box-item-icon">
+          <i class="fas fa-long-arrow-alt-up"></i>
+        </div>`;
+    }
+  }
+}
+
+// Rest of the code...
+
+
+// disable the buttoms
+function disable() {
+  binarySearchBtn.setAttribute("disabled", true);
+  linearSearchBtn.setAttribute("disabled", true);
+  searchBtn.setAttribute("disabled", true);
+  generateArrayBtn.setAttribute("disabled", true);
+}
+
+  
+  </script>
+  
+  
+</html>
